@@ -1,10 +1,12 @@
-const apiUrl = "https://api.cryptonator.com/api/ticker/";
+
 // HTML Elements
 const entryField = document.querySelector(".entryField");
 let cryptoInput = document.querySelector("#cryptoInput");
 const outputField = document.querySelector(".outputField");
 let cryptoOutput = document.querySelector("#cryptoOutput");
 const convertBtn = document.querySelector("button");
+
+const apiUrl = "https://api.cryptonator.com/api/ticker/";
 convertBtn.addEventListener("click", function (e) {
   e.preventDefault();
   fetch(`${apiUrl}${entryField.value}-${outputField.value}`)
@@ -16,3 +18,4 @@ convertBtn.addEventListener("click", function (e) {
       cryptoOutput.value = convertedValue.toLocaleString();
     });
 });
+
